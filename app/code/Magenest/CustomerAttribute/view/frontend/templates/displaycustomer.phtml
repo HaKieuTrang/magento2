@@ -1,0 +1,43 @@
+<style>
+    h3 {
+        font-weight: bold
+    }
+
+    .customer_info {
+        width: available;
+        border: 1px solid #333;
+        padding: 10px;
+        overflow: auto;
+        border-radius: 20px;
+    }
+
+    #info {
+        float: right;
+        width: 60%;
+    }
+
+    #img {
+        float: left;
+        border: 6px solid transparent;
+        padding: 7px;
+        border-color: #2B6FB6;
+        border-radius: 20px;
+    }
+</style>
+
+<div class="customer_info">
+    <?php foreach ($block->getCustomerCollection() as $customer): ?>
+        <div id="info">
+            <h3>
+                <?php echo 'Name: ' . $customer->getName() . '<br>' .
+                    'Email: ' . $customer->getEmail() ?>
+            </h3>
+        </div>
+        <div id="img">
+            <img src="<?php echo $block->getAvatarUrl($customer->getEntityId()) ?>" width="200"/>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+
+

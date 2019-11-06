@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magenest" translate="label" sortOrder="500">
+            <label>MAGENEST</label>
+        </tab>
+        <section id="movie" translate="label" type="text" sortOrder="100"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Movie</label>
+            <tab>magenest</tab>
+            <resource>Magenest_Movie::config_movie</resource>
+            <group id="moviepage" translate="label" type="text" sortOrder="1"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Movie</label>
+                <field id="text_field" translate="label" type="text"
+                       sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Field</label>
+                    <backend_model>Magenest\Movie\Model\Config\Backend\SetTextCustomer</backend_model>
+                </field>
+
+                <field id="yes_no" translate="label" type="select"
+                       sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Yes/No_Field_<font color=#FF0000>abcd</font>]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="select_field" translate="label" type="select"
+                       sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Select Default</label>
+                    <source_model>Magenest\Movie\Model\Config\Source\Relation</source_model>
+                </field>
+
+                <field id="rows_movie" translate="label" type="text"
+                       sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rows in table “magenest_movie”</label>
+                </field>
+
+                <field id="rows_actor" translate="label" type="text"
+                       sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rows in table “magenest_actor”</label>
+                </field>
+
+                <field id="button" translate="label" type="button"
+                       sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Field</label>
+                </field>
+            </group>
+        </section>
+
+<!--        <section id="login" translate="label" sortOrder="500">-->
+<!--            <label>Social Login</label>-->
+<!--            <tab>magenest</tab>-->
+<!--            <resource>Magenest_Movie::config_login</resource>-->
+<!--            <group id="loginpage" translate="label" type="text" sortOrder="1"-->
+<!--                   showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                <label>Social Login</label>-->
+<!--                <field id="rows" translate="label" type="text"-->
+<!--                    sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Rows</label>-->
+<!--                </field>-->
+<!--            </group>-->
+<!--        </section>-->
+    </system>
+</config>
