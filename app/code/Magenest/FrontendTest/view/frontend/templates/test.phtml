@@ -1,18 +1,64 @@
 <style>
-    button{
-       margin: 10px;
+    button {
+        margin: 10px;
     }
+
+    #login {
+        display: none;
+    }
+
+    #btLogin {
+        margin-top: 13px;
+    }
+
+
 </style>
 
 <button id="bt1" name="bt1">Open Modal</button>
-<button>Open Magento Login Modal</button>
-<button>Open Custom Login Modal</button>
+<button id="bt2">Open Magento Login Modal</button>
+<button id="bt3">Open Custom Login Modal</button>
+
+<div id="login">
+    <form action="#" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="pass">
+        </div>
+        <div>
+            <input type="button" id="btLogin" value="Login">
+        </div>
+    </form>
+</div>
 
 <script>
     require(['jquery'], function ($) {
-            $('#bt1').click(function () {
+            var bt1 = $('#bt1');
+            bt1.click(function () {
                 alert('Hello World');
             });
         }
     );
 </script>
+
+<script>
+    require(['jquery', "Magento_Ui/js/modal/modal"], function ($, modal) {
+        var bt2 = $('#bt2');
+        var login = $('#login');
+
+        var options = {
+            type: 'popup', // popup or slide
+            responsive: true, // true = on smaller screens the modal slides in from the right
+            title: 'Login Modal',
+        };
+
+        var popup = modal(options, $('#login')); // khoi tao phuong thuc
+        bt2.click(function () {
+            login.modal('openModal');
+        });
+    });
+</script>
+
