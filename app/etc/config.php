@@ -213,6 +213,7 @@ return [
         'Magento_PaypalReCaptcha' => 1,
         'MSP_TwoFactorAuth' => 1,
         'Magenest_CustomerAttribute' => 1,
+        'Magenest_FrontendTest' => 1,
         'Magenest_Movie' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1

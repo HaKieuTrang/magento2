@@ -26,8 +26,7 @@ class DisplayCustomer extends Template
         $this->_customerRepositoryInterface = $customerRepositoryInterface;
     }
 
-    public
-    function getCustomerCollection()
+    public function getCustomerCollection()
     {
         return $this->_customerFactory->create();
     }
