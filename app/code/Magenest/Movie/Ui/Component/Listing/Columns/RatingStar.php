@@ -32,7 +32,7 @@ class RatingStar extends Column
 
         return $dataSource;
     }
-
+    
     public function getHtml($rating)
     {
         $result = '';
