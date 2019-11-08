@@ -1,26 +1,22 @@
 <h2>Phim</h2>
 <p>
     <?php
-    $name = $block->getInfo()->getData();
+    $name = $block->getInfo();
 
-    $movie = $block->getMovie();
-//    foreach ($movie as $value) {
-//        echo "+) Movie: ".$value['name'] . "</br>";
-//        foreach ($name as $item) {
-//            if ($value['name'] == $item['name'])
-//                echo "- Director: " . $item['director_name']."<br>";
-//        }
+    echo '+) Movie: '.'<br>';
+    foreach ($name as $item) {
+        echo ' - '.$item->getName().' - ';
+        echo 'Director: '. $item->getDirectorname() . '<br>';
+    }
+//    $movie = $block->getMovie();
+//    foreach ($movie as $value){
+//        echo $value->getName().''<br>;
 //    }
 
-    foreach ($name as $item) {
-        echo "+) Movie: ".$item['name']."<br>";
-        echo "- Director: " . $item['director_name'] . "<br>";
-    }
-
     $actor = $block->getActor();
-    echo "Actor: <br>";
+    echo "+) Actor: <br>";
     foreach ($actor as $value){
-        echo $value['name']."  ";
+        echo " - ".$value->getName();
     }
     ?>
 

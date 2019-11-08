@@ -32,7 +32,7 @@ class Display extends Template
                     'magenest_director' => $movie->getTable('magenest_director')
                 ],
                 'main_table.director_id = magenest_director.director_id',
-               ['director_name' => 'magenest_director.name']);
+               ['directorname' => 'magenest_director.name']);
 //            ->joinLeft(
 //                [
 //                    'magenest_movie_actor' => $movie->getTable('magenest_movie_actor')
@@ -45,8 +45,8 @@ class Display extends Template
     }
 
     public function getMovie(){
-        $movie = $this->_movieCollection->create()->addFieldToSelect('name');
-        return $movie;
+       return $this->_movieCollection->create();
+
     }
 
     public function getActor(){

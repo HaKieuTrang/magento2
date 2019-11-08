@@ -1,6 +1,6 @@
 <?php
 
-namespace Magenest\Movie\Ui\Component\Listing\Column;
+namespace Magenest\Movie\Ui\Component\Listing\Columns;
 
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
