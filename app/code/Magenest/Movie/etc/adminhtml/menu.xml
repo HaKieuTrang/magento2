@@ -2,6 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
+        <!--Add menu movie-->
         <add
                 id="Magenest_Movie::movie"
                 title="Movie"
@@ -9,10 +10,17 @@
                 sortOrder="51"
                 resource="Magenest_Movie::movie"/>
         <add
+                id="Magenest_Movie::info"
+                title="Information"
+                module="Magenest_Movie"
+                parent="Magenest_Movie::movie"
+                resource="Magenest_Movie::info"
+                sortOrder="10"/>
+        <add
                 id="Magenest_Movie::magenest_movie"
                 title="Movie"
                 module="Magenest_Movie"
-                parent="Magenest_Movie::movie"
+                parent="Magenest_Movie::info"
                 action="movie/index/movie"
                 resource="Magenest_Movie::magenest_movie"
                 sortOrder="10"/>
@@ -20,7 +28,7 @@
                 id="Magenest_Movie::magenest_director"
                 title="Director"
                 module="Magenest_Movie"
-                parent="Magenest_Movie::movie"
+                parent="Magenest_Movie::info"
                 action="movie/index/director"
                 resource="Magenest_Movie::magenest_director"
                 sortOrder="10"/>
@@ -28,9 +36,33 @@
                 id="Magenest_Movie::magenest_actor"
                 title="Actor"
                 module="Magenest_Movie"
-                parent="Magenest_Movie::movie"
+                parent="Magenest_Movie::info"
                 action="movie/index/actor"
                 resource="Magenest_Movie::magenest_actor"
                 sortOrder="10"/>
+        <add
+                id="Magenest_Movie::movie_theater"
+                title="Movie Theater"
+                module="Magenest_Movie"
+                parent="Magenest_Movie::movie"
+                resource="Magenest_Movie::movie_theater"
+                sortOrder="20"/>
+        <add
+                id="Magenest_Movie::cgv"
+                title="CGV"
+                module="Magenest_Movie"
+                parent="Magenest_Movie::movie_theater"
+                action="movie/xero/viewlog"
+                resource="Magenest_Movie::cgv"
+                sortOrder="20"/>
+        <add
+                id="Magenest_Movie::bhd"
+                title="BHD"
+                module="Magenest_Movie"
+                parent="Magenest_Movie::movie_theater"
+                action="movie/xero/viewlog"
+                resource="Magenest_Movie::bhd"
+                sortOrder="20"/>
+
     </menu>
 </config>

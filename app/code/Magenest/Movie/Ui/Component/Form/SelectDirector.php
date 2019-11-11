@@ -40,5 +40,5 @@ class SelectDirector implements OptionSourceInterface
         }
         return $directorById;
     }
-    
+
 }
