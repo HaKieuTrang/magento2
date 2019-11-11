@@ -93,16 +93,18 @@
             </argument>
         </field>
 
-        <field name="director_id">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string">Director Id</item>
-                    <item name="visible" xsi:type="boolean">true</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">addmovie</item>
-                </item>
-            </argument>
+        <field name="director_id" formElement="select">
+            <settings>
+                <required>true</required>
+                <label translate="true">Director</label>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Magenest\Movie\Ui\Component\Form\SelectDirector"/>
+                    </settings>
+                </select>
+            </formElements>
         </field>
     </fieldset>
 </form>

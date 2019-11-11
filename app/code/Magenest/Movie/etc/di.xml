@@ -44,9 +44,8 @@
         </arguments>
     </virtualType>
 
-<!--    plugin-->
+    <!--    plugin-->
     <type name="Magento\Checkout\CustomerData\AbstractItem">
         <plugin name="MovieProduct" type="Magenest\Movie\Plugin\Product" sortOrder="1" disabled="false"/>
     </type>
-
 </config>
