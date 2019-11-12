@@ -26,17 +26,17 @@
 </style>
 
 <div class="customer_info">
-    <?php foreach ($block->getCustomerCollection() as $customer): ?>
+    <?php $customer = $block->getCustomerInfo(); ?>
         <div id="info">
             <h3>
-                <?php echo 'Name: ' . $customer->getName() . '<br>' .
+                <?php echo 'Name: ' . $customer->getLastName() . '<br>' .
                     'Email: ' . $customer->getEmail() ?>
             </h3>
         </div>
         <div id="img">
-            <img src="<?php echo $block->getAvatarUrl($customer->getEntityId()) ?>" width="200"/>
+            <img src="<?php echo $block->getAvatarUrl($customer->getId()) ?>" width="200"/>
         </div>
-    <?php endforeach; ?>
+
 </div>
 
 

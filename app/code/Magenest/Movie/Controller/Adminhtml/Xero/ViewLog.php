@@ -18,7 +18,7 @@ class ViewLog extends Action
     public function execute()
     {
         $resultPage = $this->resultFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend(_('Movie Theater'));
+        $resultPage->getConfig()->getTitle()->prepend(_('Request Report'));
         return $resultPage;
     }
 }

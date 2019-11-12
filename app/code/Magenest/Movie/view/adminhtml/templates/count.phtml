@@ -1,0 +1,45 @@
+<style>
+    .container {
+        width: 100%;
+    }
+
+    #module {
+        width: 30%;
+        float: left;
+    }
+
+    #count {
+        width: 60%;
+        float: right;
+    }
+
+    td, th {
+        width: 30%;
+        border: 4px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<h2>Requests made today</h2>
+<div id="content" class="container">
+    <div id="module" class="container">
+        <h3>Total Request Today</h3>
+        <?php echo 'Number of modules: ' . $block->countModule(); ?>
+    </div>
+    <div id="count" class="container">
+        <h3>Detail</h3>
+        <table>
+            <tr><td><?php echo 'Number of products: ' . $block->countProduct() ?> </td></tr>
+            <tr><td><?php echo 'Number of customers: ' . $block->countCustomer() ?> </td> </tr>
+            <tr><td><?php echo 'Number of orders: ' . $block->countOrder() ?> </td> </tr>
+            <tr><td><?php echo 'Number of invoices: ' . $block->countInvoice() ?></td> </tr>
+            <tr><td><?php echo 'Number of creditmemos: ' . $block->countCreditMemo() ?></td> </tr>
+        </table>
+    </div>
+</div>
+
