@@ -216,6 +216,8 @@ return [
         'Magenest_FrontendTest' => 1,
         'Magenest_Movie' => 1,
         'Temando_Shipping' => 1,
+        'Test1_Manufacturer' => 1,
+        'Test1_ProductAttribute' => 1,
         'Vertex_Tax' => 1
     ]
 ];
