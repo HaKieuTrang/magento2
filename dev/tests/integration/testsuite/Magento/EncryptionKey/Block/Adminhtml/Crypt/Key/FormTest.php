@@ -35,7 +35,7 @@ class FormTest extends \PHPUnit\Framework\TestCase
 
         $form = $block->getForm();
 
-        $this->assertEquals('edit_form', $form->getId());
+        $this->assertEquals('edit_form.xml', $form->getId());
         $this->assertEquals('post', $form->getMethod());
 
         foreach (['enc_key_note', 'generate_random', 'crypt_key', 'main_fieldset'] as $id) {

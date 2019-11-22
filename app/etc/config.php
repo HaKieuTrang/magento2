@@ -218,6 +218,7 @@ return [
         'Temando_Shipping' => 1,
         'Test1_Manufacturer' => 1,
         'Test1_ProductAttribute' => 1,
+        'Test2_Developer' => 1,
         'Vertex_Tax' => 1
     ]
 ];

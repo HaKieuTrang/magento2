@@ -40,7 +40,7 @@ class FormTest extends \PHPUnit\Framework\TestCase
         $form = $this->_getFormInstance(['url_rewrite' => new \Magento\Framework\DataObject(['id' => 3])]);
         $this->assertInstanceOf(\Magento\Framework\Data\Form::class, $form);
         $this->assertNotEmpty($form->getAction());
-        $this->assertEquals('edit_form', $form->getId());
+        $this->assertEquals('edit_form.xml', $form->getId());
         $this->assertEquals('post', $form->getMethod());
         $this->assertTrue($form->getUseContainer());
         $this->assertContains('/id/3', $form->getAction());

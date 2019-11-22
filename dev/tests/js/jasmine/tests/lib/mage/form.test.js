@@ -18,7 +18,7 @@ define([
      */
     if ($.ui.version === '1.9.2') {
         describe('Test for mage/form jQuery plugin', function () {
-            var id = 'edit_form',
+            var id = 'edit_form.xml',
                 elementId = '#' + id;
 
             beforeEach(function () {

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">vendor_edit_form.vendor_edit_form_data_source</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+
+    <settings>
+        <label translate="true">Vendor Form</label>
+        <buttons>
+            <button name="save" class="Test2\Developer\Block\Adminhtml\SaveButton"/>
+        </buttons>
+        <namespace>vendor_edit_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>vendor_edit_form.vendor_edit_form_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="vendor_edit_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+        <dataProvider name="vendor_edit_form_data_source" class="Test2\Developer\Model\Vendor\DataProvider">
+            <settings>
+                <primaryFieldName>id</primaryFieldName>
+                <requestFieldName>id</requestFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <fieldset name="edit">
+        <settings>
+            <label translate="true">Vendor Information</label>
+        </settings>
+        <field name="id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <visible>false</visible>
+                <dataType>int</dataType>
+            </settings>
+        </field>
+        <field name="customer_id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Customer Id</label>
+                <dataType>int</dataType>
+            </settings>
+        </field>
+        <field name="first_name" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">First Name</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="last_name" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Last Name</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="email" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Email</label>
+                <dataType>text</dataType>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="company" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Company</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="phone_number" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Phone Number</label>
+                <dataType>text</dataType>
+                <validation>
+                    <rule name="min-text-length" xsi:type="number">10</rule>
+                    <rule name="max-text-length" xsi:type="number">10</rule>
+                    <rule name="validate-number" xsi:type="number">0</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="fax" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Fax</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="address" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Address</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="street" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Street</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="city" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">City</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="postcode" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">edit</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Postcode</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="country" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string"></item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Country</label>
+                <dataType>text</dataType>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Magento\Directory\Model\ResourceModel\Country\Collection"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+</form>

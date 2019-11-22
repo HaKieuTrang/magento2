@@ -5,6 +5,6 @@
         <observer name="set_rating" instance="Magenest\Movie\Observer\SetMovieRating" disabled="true"/>
     </event>
     <event name="adminhtml_customer_save_after">
-        <observer name="set_first_name" instance="Magenest\Movie\Observer\SetCustomerFirstName" />
+        <observer name="set_first_name" instance="Magenest\Movie\Observer\SetCustomerFirstName" disabled="true" />
     </event>
 </config>

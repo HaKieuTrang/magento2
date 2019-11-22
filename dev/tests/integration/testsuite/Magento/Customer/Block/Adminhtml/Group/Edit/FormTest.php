@@ -71,7 +71,7 @@ class FormTest extends \PHPUnit\Framework\TestCase
         $block = $this->layout->createBlock(\Magento\Customer\Block\Adminhtml\Group\Edit\Form::class, 'block');
         $form = $block->getForm();
 
-        $this->assertEquals('edit_form', $form->getId());
+        $this->assertEquals('edit_form.xml', $form->getId());
         $this->assertEquals('post', $form->getMethod());
         $baseFieldSet = $form->getElement('base_fieldset');
         $this->assertNotNull($baseFieldSet);
@@ -107,7 +107,7 @@ class FormTest extends \PHPUnit\Framework\TestCase
         $block = $this->layout->createBlock(\Magento\Customer\Block\Adminhtml\Group\Edit\Form::class, 'block');
         $form = $block->getForm();
 
-        $this->assertEquals('edit_form', $form->getId());
+        $this->assertEquals('edit_form.xml', $form->getId());
         $this->assertEquals('post', $form->getMethod());
         $baseFieldSet = $form->getElement('base_fieldset');
         $this->assertNotNull($baseFieldSet);

@@ -27,15 +27,15 @@
 
 <div class="customer_info">
     <?php $customer = $block->getCustomerInfo(); ?>
-        <div id="info">
-            <h3>
-                <?php echo 'Name: ' . $customer->getLastName() . '<br>' .
-                    'Email: ' . $customer->getEmail() ?>
-            </h3>
-        </div>
-        <div id="img">
-            <img src="<?php echo $block->getAvatarUrl($customer->getId()) ?>" width="200"/>
-        </div>
+    <div id="info">
+        <h3>
+            <?php echo 'Name: ' . $customer->getLastName() . '<br>' .
+                'Email: ' . $customer->getEmail() ?>
+        </h3>
+    </div>
+    <div id="img">
+        <img src="<?php echo $block->getAvatarUrl($customer->getId()) ?>" width="200"/>
+    </div>
 
 </div>
 
