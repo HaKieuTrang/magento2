@@ -4,10 +4,9 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="Magento_Customer::customer_account_create.xml"/>
     <body>
-        <referenceContainer name="content">
-            <block class="Test2\Developer\Block\Frontend\BecomeVendor"
+        <referenceContainer name="form.additional.info">
+            <block class="Magento\Framework\View\Element\Template"
                    name="vendor" template="Test2_Developer::become_vendor.phtml">
-
             </block>
         </referenceContainer>
     </body>

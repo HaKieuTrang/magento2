@@ -33,9 +33,11 @@
                 'Email: ' . $customer->getEmail() ?>
         </h3>
     </div>
-    <div id="img">
-        <img src="<?php echo $block->getAvatarUrl($customer->getId()) ?>" width="200"/>
-    </div>
+
+    <?php if ($image = $block->getAvatarUrl($customer->getId())): ?>
+        <div id="img"><img src="<?php echo $image ?>" width="200"/></div>
+    <?php endif; ?>
+
 
 </div>
 

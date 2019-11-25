@@ -40,8 +40,20 @@ class DisplayCustomer extends Template
     public function getAvatarUrl($customerId)
     {
         $baseUrl = $this->getBaseUrl();
-        $avatar = $this->_customerRepositoryInterface->getById($customerId)->getCustomAttribute('avatar')->getValue();
-        $url = $baseUrl.'pub/media/customer'.$avatar;
-        return $url;
+
+//        if (!empty($avatar)) {
+//            $url = $baseUrl.'pub/media/customer'.$avatar;
+//            return $url;
+//        }
+//        return false;
+        $customerAttributeData = $this->_customer->getCustomer()->__toArray();
+        if(!empty($customerAttributeData['custom_attributes']['avatar'])) {
+            $avatar = $this->_customerRepositoryInterface->getById($customerId)->getCustomAttribute('avatar')->getValue();
+            $url = $baseUrl.'pub/media/customer'.$avatar;
+             return $url;
+        }
+        return false;
+
+
     }
 }

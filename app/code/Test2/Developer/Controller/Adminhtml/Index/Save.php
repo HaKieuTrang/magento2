@@ -33,7 +33,7 @@ class Save extends Action
                 });
 
                 $vendor->setData($data);
-                $this->_eventManager->dispatch('save_dev', ['dev' => $vendor]);
+                $this->_eventManager->dispatch('save_vendor', ['dev' => $vendor]);
                 $vendor->save();
                 $this->messageManager->addSuccess(__('Successfully saved the Vendor'));
                 $this->_objectManager->get('Magento\Backend\Model\Session')->setFormData(false);

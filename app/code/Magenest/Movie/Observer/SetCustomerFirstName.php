@@ -10,7 +10,8 @@ class SetCustomerFirstName implements ObserverInterface
 {
     protected $_customerRepository;
 
-    public function __construct(CustomerRepositoryInterface $customerRepository)
+    public function __construct(
+        CustomerRepositoryInterface $customerRepository)
     {
         $this->_customerRepository = $customerRepository;
     }
