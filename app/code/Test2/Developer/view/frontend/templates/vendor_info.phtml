@@ -1,0 +1,54 @@
+<style>
+    #info {
+        width: 80%;
+    }
+
+    .col1 {
+        width: 14%;
+    }
+</style>
+<div id="info">
+    <table>
+        <tr>
+            <td class="col1">Customer ID:</td>
+            <td id="col2"><input type="number" id="customerId" name="customerId"></td>
+        </tr>
+        <tr>
+            <td class="col1"><input id="bt" name="bt" type="button" value="Submit"></td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+    require(['jquery', 'Magento_Ui/js/modal/alert'], function ($, alert) {
+        $("#bt").on("click", function () {
+            var value = $("#customerId").val();
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "<?php echo
+                $block->getUrlInfo() ?>",
+                data: {id: value},
+                success: function (result) {
+                    alert({
+                        title: "Customer Information",
+                        content: "ID: " + result.id +
+                                 "<br>Name: " + result.name +
+                                 "<br>Email: " + result.email +
+                                 "<br>Address: " + result.address,
+                        autoOpen: true,
+                        clickableOverlay: true,
+                    });
+                },
+                error: function (error) {
+                    alert({
+                        title: "Warning",
+                        content: "This ID is not exist!",
+                        autoOpen: true,
+                        clickableOverlay: true,
+                    });
+                }
+            });
+        })
+    })
+</script>

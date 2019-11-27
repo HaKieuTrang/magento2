@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer  name="wishlist_sidebar" remove="true"/>
+        <referenceContainer  name="sidebar.additional" remove="true"/>
+        <referenceContainer  name="navigation.sections" remove="true"/>
+        <referenceContainer name="content">
+            <block class="Test2\Developer\Block\Frontend\VendorInfo" name="vendorinfo"
+                   template="Test2_Developer::vendor_info.phtml" />
+        </referenceContainer>
+    </body>
+</page>
