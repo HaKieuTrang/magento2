@@ -219,6 +219,8 @@ return [
         'Test1_Manufacturer' => 1,
         'Test1_ProductAttribute' => 1,
         'Test2_Developer' => 1,
+        'Test2_ProductAttribute' => 1,
+        'Test3_Hotel' => 1,
         'Vertex_Tax' => 1
     ]
 ];

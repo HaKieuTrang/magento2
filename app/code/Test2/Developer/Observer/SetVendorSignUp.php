@@ -23,7 +23,7 @@ class SetVendorSignUp implements ObserverInterface
     public function execute(Observer $observer)
     {
         $customer = $observer->getEvent()->getData('customer');
-        if ($_REQUEST['dev_is_approved'] == 'on') {
+        if (isset($_REQUEST['dev_is_approved']) && $_REQUEST['dev_is_approved'] == 'on' ) {
             $vendor = 1;
         } else {
             $vendor = 0;

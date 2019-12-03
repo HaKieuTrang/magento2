@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">newhotel_form.newhotel_form_data_source</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+
+    <settings>
+        <label translate="true">New Hotel Form</label>
+        <buttons>
+            <button name="save" class="Test3\Hotel\Block\Adminhtml\SaveButton"/>
+            <button name="back" class="Test3\Hotel\Block\Adminhtml\BackButton"/>
+        </buttons>
+        <namespace>newhotel_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>newhotel_form.newhotel_form_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="newhotel_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+        <dataProvider name="newhotel_form_data_source" class="Test3\Hotel\Model\Hotel\DataProvider">
+            <settings>
+                <primaryFieldName>hotel_id</primaryFieldName>
+                <requestFieldName>id</requestFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="add">
+        <settings>
+            <label translate="true">Hotel Information</label>
+        </settings>
+        <field name="hotel_id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <visible>false</visible>
+                <dataType>int</dataType>
+            </settings>
+        </field>
+        <field name="hotel_name" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Hotel Name</label>
+                <dataType>text</dataType>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="location_street" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Street</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="location_city" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">City</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="location_state" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">State</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="location_country" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Country</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="contact_phone" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Contact Phone</label>
+                <dataType>text</dataType>
+                <validation>
+                    <rule name="min-text-length" xsi:type="number">10</rule>
+                    <rule name="max-text-length" xsi:type="number">10</rule>
+                    <rule name="validate-number" xsi:type="number">0</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="total_available_room" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Total Available Room</label>
+                <dataType>text</dataType>
+                <validation>
+                    <rule name="validate-number" xsi:type="number">0</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="available_single" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Available Single</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="available_double" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Available Double</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="available_triple" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">add</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Available Triple</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+    </fieldset>
+</form>

@@ -24,7 +24,7 @@ class SelectCustomer implements OptionSourceInterface
                     'value' => $id
                 ];
             }
-            $customerById[$id]['label'] = $customer['firstname']." ".$customer['lastname'];
+            $customerById[$id]['label'] = $id.' - '. $customer['firstname'].' '.$customer['lastname'];
           //  $customerById[$id]['label'] = $id;
         }
         return $customerById;

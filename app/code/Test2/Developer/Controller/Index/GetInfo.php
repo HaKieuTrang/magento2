@@ -25,7 +25,7 @@ class GetInfo extends Action
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
-        $customerID = $data['id'];
+        $customerID = $data['customerId'];
         $customer = $this->_customerRepository->getById($customerID);
         $info = [
             'id' => $customer->getId(),

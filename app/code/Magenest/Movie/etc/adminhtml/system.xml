@@ -48,18 +48,22 @@
             </group>
         </section>
 
-<!--        <section id="login" translate="label" sortOrder="500">-->
-<!--            <label>Social Login</label>-->
-<!--            <tab>magenest</tab>-->
-<!--            <resource>Magenest_Movie::config_login</resource>-->
-<!--            <group id="loginpage" translate="label" type="text" sortOrder="1"-->
-<!--                   showInDefault="1" showInWebsite="1" showInStore="1">-->
-<!--                <label>Social Login</label>-->
-<!--                <field id="rows" translate="label" type="text"-->
-<!--                    sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">-->
-<!--                    <label>Rows</label>-->
+        <section id="vendor" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Vendor</label>
+            <tab>magenest</tab>
+            <resource>Magenest_Movie::config_movie</resource>
+            <group id="vendorepage" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Vendor</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+<!--                <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Module Title</label>-->
+<!--                    <comment>This text will be used later.</comment>-->
 <!--                </field>-->
-<!--            </group>-->
-<!--        </section>-->
+            </group>
+        </section>
     </system>
 </config>

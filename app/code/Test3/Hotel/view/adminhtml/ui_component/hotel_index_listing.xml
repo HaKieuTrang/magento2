@@ -5,18 +5,18 @@
     <argument name="data" xsi:type="array">
         <!-- Khai bao data_source bang cach dung tag 'js_config' de tao lien ket giua grid va database -->
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">vendor_listing.vendor_listing_data_source</item>
-            <item name="deps" xsi:type="string">vendor_listing.vendor_listing_data_source</item>
+            <item name="provider" xsi:type="string">hotel_index_listing.hotel_index_listing_data_source</item>
+            <item name="deps" xsi:type="string">hotel_index_listing.hotel_index_listing_data_source</item>
         </item>
 
-        <item name="spinner" xsi:type="string">vendor_columns</item>
+        <item name="spinner" xsi:type="string">hotel_columns</item>
 
         <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string" translate="true">New Vendors</item>
+                <item name="label" xsi:type="string" translate="true">New Hotel</item>
                 <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">dev/index/addvendor</item>
+                <item name="url" xsi:type="string">hotel/index/newhotel</item>
             </item>
         </item>
     </argument>
@@ -63,12 +63,12 @@
     </listingToolbar>
 
     <!--Dinh nghia ten doi tuong duoc su dung-->
-    <dataSource name="vendorDataSource">
+    <dataSource name="hotelDataSource">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">
                 Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
             </argument>
-            <argument name="name" xsi:type="string">vendor_listing_data_source</argument>
+            <argument name="name" xsi:type="string">hotel_index_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
             <argument name="data" xsi:type="array">
@@ -76,24 +76,24 @@
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
                     <item name="update_url" xsi:type="url" path="mui/index/render"/>
                     <item name="storageConfig" xsi:type="array">
-                        <item name="indexField" xsi:type="string">id</item>
+                        <item name="indexField" xsi:type="string">hotel_id</item>
                     </item>
                 </item>
             </argument>
         </argument>
     </dataSource>
 
-    <columns name="vendor_columns">
+    <columns name="hotel_columns">
         <selectionsColumn name="ids">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="resizeEnabled" xsi:type="boolean">false</item>
                     <item name="resizeDefaultWidth" xsi:type="string">55</item>
-                    <item name="indexField" xsi:type="string">id</item>
+                    <item name="indexField" xsi:type="string">hotel_id</item>
                 </item>
             </argument>
         </selectionsColumn>
-        <column name="id">
+        <column name="hotel_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">textRange</item>
@@ -102,16 +102,7 @@
                 </item>
             </argument>
         </column>
-        <column name="customer_id">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">textRange</item>
-                    <item name="sorting" xsi:type="string">asc</item>
-                    <item name="label" xsi:type="string" translate="true">Customer Id</item>
-                </item>
-            </argument>
-        </column>
-        <column name="first_name">
+        <column name="hotel_name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
@@ -121,12 +112,12 @@
                             <item name="required-entry" xsi:type="boolean">true</item>
                         </item>
                     </item>
-                    <item name="label" xsi:type="string" translate="true">First Name</item>
+                    <item name="label" xsi:type="string" translate="true">Hotel Name</item>
                 </item>
             </argument>
         </column>
 
-        <column name="last_name">
+        <column name="location_street">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
@@ -136,82 +127,34 @@
                             <item name="required-entry" xsi:type="boolean">true</item>
                         </item>
                     </item>
-                    <item name="label" xsi:type="string" translate="true">Last Name</item>
-                </item>
-            </argument>
-        </column>
-
-        <column name="email">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="editor" xsi:type="array">
-                        <item name="editorType" xsi:type="string">text</item>
-                        <item name="validation" xsi:type="array">
-                            <item name="required-entry" xsi:type="boolean">true</item>
-                        </item>
-                    </item>
-                    <item name="label" xsi:type="string" translate="true">Email</item>
-                </item>
-            </argument>
-        </column>
-        <column name="company">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Company</item>
-                </item>
-            </argument>
-        </column>
-        <column name="phone_number">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Phone Number</item>
-                </item>
-            </argument>
-        </column>
-        <column name="fax">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Fax</item>
-                </item>
-            </argument>
-        </column>
-        <column name="address">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Address</item>
-                </item>
-            </argument>
-        </column>
-        <column name="street">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Street</item>
                 </item>
             </argument>
         </column>
-        <column name="city">
+
+        <column name="location_city">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
                     <item name="label" xsi:type="string" translate="true">City</item>
                 </item>
             </argument>
         </column>
-        <column name="postcode">
+        <column name="location_state">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Post Code</item>
+                    <item name="label" xsi:type="string" translate="true">State</item>
                 </item>
             </argument>
         </column>
-        <column name="country">
+        <column name="location_country">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
@@ -219,16 +162,48 @@
                 </item>
             </argument>
         </column>
-        <column name="total_sales">
+        <column name="contact_phone">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Total Sales</item>
+                    <item name="label" xsi:type="string" translate="true">Phone</item>
                 </item>
             </argument>
         </column>
-        <!--Them cot edit-->
-        <actionsColumn name="actions" class="Test2\Developer\Ui\Component\Listing\Columns\Edit">
+        <column name="total_available_room">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Total Available Room</item>
+                </item>
+            </argument>
+        </column>
+        <column name="available_single">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Available Single</item>
+                </item>
+            </argument>
+        </column>
+        <column name="available_double">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Available Double</item>
+                </item>
+            </argument>
+        </column>
+        <column name="available_triple">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Available Triple</item>
+                </item>
+            </argument>
+        </column>
+<!--        Them cot edit-->
+        <actionsColumn name="actions" class="Test3\Hotel\Ui\Component\Listing\Columns\Actions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="resizeEnabled" xsi:type="boolean">false</item>
