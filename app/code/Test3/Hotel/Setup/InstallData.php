@@ -22,7 +22,7 @@ class InstallData implements InstallDataInterface
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
         $eavSetup->addAttribute(
             \Magento\Catalog\Model\Product::ENTITY,
-            'dev_product_vendor',
+            'roomtype',
             [
                 'type' => 'text',
                 'backend' => '',

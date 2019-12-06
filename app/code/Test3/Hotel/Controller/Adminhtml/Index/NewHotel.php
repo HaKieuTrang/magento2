@@ -18,6 +18,7 @@ class NewHotel extends Action
     public function execute()
     {
         $resultPage = $this->_resultFactory->create();
+        $resultPage->getConfig()->getTitle()->prepend(_('New Hotel'));
         return $resultPage;
 
     }

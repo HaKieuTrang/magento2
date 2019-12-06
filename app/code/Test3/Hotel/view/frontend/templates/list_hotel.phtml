@@ -1,0 +1,22 @@
+<style>
+    select {
+        margin-bottom: 18px;
+        width: 60%;
+    }
+</style>
+<?php
+$product = $block->getCurrentProduct();
+$roomType = $product->getRoomtype(); ?>
+<?php if (isset($roomType)): ?>
+    <h3>Please Select The Hotel </h3>
+    <?php $hotel = $block->getInfo() ?>
+    <select name="hotel" id="hotel">
+        <option value="">Select The Hotel</option>
+        <?php foreach ($hotel as $option): ?>
+            <?php if (!empty($option['available_' . $roomType])): ?>
+                <option value="<?php echo $option['hotel_id'] ?> "> <?php echo $option['hotel_name'] ?> </option>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </select>
+
+<?php endif; ?>

@@ -149,6 +149,9 @@
             <settings>
                 <label translate="true">Available Single</label>
                 <dataType>text</dataType>
+                <validation>
+                    <rule name="validate-number" xsi:type="number">0</rule>
+                </validation>
             </settings>
         </field>
         <field name="available_double" formElement="input">
@@ -160,6 +163,9 @@
             <settings>
                 <label translate="true">Available Double</label>
                 <dataType>text</dataType>
+                <validation>
+                    <rule name="validate-number" xsi:type="number">0</rule>
+                </validation>
             </settings>
         </field>
         <field name="available_triple" formElement="input">
@@ -171,6 +177,9 @@
             <settings>
                 <label translate="true">Available Triple</label>
                 <dataType>text</dataType>
+                <validation>
+                    <rule name="validate-number" xsi:type="number">0</rule>
+                </validation>
             </settings>
         </field>
     </fieldset>

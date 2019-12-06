@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="Magento_Catalog::catalog_category_view.xml"/>
+    <body>
+        <referenceContainer name="content">
+            <referenceContainer name="product.info.form.content">
+                <block class="Test3\Hotel\Block\FrontEnd\SelectHotel" name="select_hotel"
+                       template="Test3_Hotel::list_hotel.phtml"
+                       before="-"/>
+            </referenceContainer>
+        </referenceContainer>
+    </body>
+</page>
