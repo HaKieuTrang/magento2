@@ -20,3 +20,41 @@ $roomType = $product->getRoomtype(); ?>
     </select>
 
 <?php endif; ?>
+
+<script type="text/javascript">
+    require(['jquery', 'Magento_Ui/js/modal/alert'], function ($, alert) {
+        $("#hotel").change(function () {
+            var value = $("#hotel").val();
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "<?php echo
+                $this->getUrl('hotel/index/hotelinfo') ?>",
+                data: {hotel: value},
+                success: function (result) {
+                    alert({
+                        title: "Hotel Information",
+                        content: "Hotel Id: " + result.id +
+                            "<br> Hotel Name: " + result.name +
+                            "<br>City: " + result.city +
+                            "<br>Phone: " + result.phone +
+                            "<br>Available Single: " + result.single +
+                            "<br>Available Double: " + result.double +
+                            "<br>Available Triple: " + result.triple,
+                        autoOpen: true,
+                        clickableOverlay: true,
+                    });
+                },
+                // error: function (error) {
+                //     alert({
+                //         title: "Warning",
+                //         content: "This ID is not exist!",
+                //         autoOpen: true,
+                //         clickableOverlay: true,
+                //     });
+                // }
+            });
+        })
+    })
+</script>
+
