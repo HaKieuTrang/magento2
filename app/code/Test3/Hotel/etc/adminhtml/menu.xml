@@ -4,10 +4,26 @@
     <menu>
         <add
                 id="Test3_Hotel::hotel"
-                title="Hotel"
+                title="Hotels"
                 module="Test3_Hotel"
                 sortOrder="34"
-                action="hotel/index/index"
                 resource="Test3_Hotel::hotel"/>
+
+        <add
+                id="Test3_Hotel::allhotel"
+                title="All Hotels"
+                module="Test3_Hotel"
+                sortOrder="10"
+                action="hotel/index/index"
+                parent="Test3_Hotel::hotel"
+                resource="Test3_Hotel::allhotel"/>
+        <add
+                id="Test3_Hotel::booking"
+                title="Booking Management"
+                module="Test3_Hotel"
+                sortOrder="10"
+                action="hotel/order/double"
+                parent="Test3_Hotel::hotel"
+                resource="Test3_Hotel::booking"/>
     </menu>
 </config>

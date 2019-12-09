@@ -30,7 +30,7 @@ class SetProductId implements ObserverInterface
 
         if (isset($roomtype)) {
             if (empty($hotel)) {
-                $item->setEntityId(0)->save(); // set product id la 0
+                $observer->getRequest()->setParam('product', false);
             }
         }
     }
