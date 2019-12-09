@@ -4,7 +4,8 @@
     <update handle="styles"/>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="hotel_order_listing"/>
+            <block class="Test3\Hotel\Block\Adminhtml\HotelOrder"
+                   name="hotel_order" template="Test3_Hotel::hotel_order.phtml" />
         </referenceContainer>
     </body>
 </page>

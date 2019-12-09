@@ -1,0 +1,45 @@
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+
+        text-align: center
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<?php $order = $block->getOrder() ?>
+<h2> Orders which have product with attribute “double”</h2>
+<table>
+    <tr>
+        <th>Order Id</th>
+        <th>Product Name</th>
+        <th>Created At</th>
+        <th>Order Status</th>
+    </tr>
+    <?php foreach ($order as $item): ?>
+        <?php $product = $block->getProduct($item['entity_id']) ?>
+        <?php $productName = $product->getName() ?>
+        <?php if ($product->getRoomtype() == 'double'): ?>
+            <tr>
+                <th><?php echo $item['entity_id'] ?></th>
+                <?php if (substr($productName, 0, 1) == 'R'): ?>
+                    <th style="color: #0f5293"><?php echo $productName ?></th>
+                <?php else: ?>
+                    <th><?php echo $productName ?></th>
+                <?php endif; ?>
+                <th><?php echo $item['created_at'] ?></th>
+                <th> <?php echo $item['status'] ?></th>
+            </tr>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</table>

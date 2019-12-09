@@ -13,17 +13,4 @@
             <argument name="resourceModel" xsi:type="string">Test3\Hotel\Model\ResourceModel\Hotel</argument>
         </arguments>
     </virtualType>
-
-    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
-        <arguments>
-            <argument name="collections" xsi:type="array">
-                <item name="hotel_order_listing_data_source" xsi:type="string">Magento\Sales\Model\ResourceModel\Order\Grid\Collection</item>
-            </argument>
-        </arguments>
-    </type>
-    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
-        <arguments>
-
-        </arguments>
-    </virtualType>
 </config>
